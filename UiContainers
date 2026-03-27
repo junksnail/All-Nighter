@@ -1,0 +1,10 @@
+using System.Collections;
+using UnityEngine;
+using TMPro;
+
+public class UiContainers : MonoBehaviour
+{
+  [SerializeField] GameObject textUsernameField;
+  [SerializeField] GameObject textCaptionField;
+  [SerializeField] GameObject imageImageField;
+}
