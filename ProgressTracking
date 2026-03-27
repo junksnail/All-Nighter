@@ -4,5 +4,15 @@ using TMPro;
 
 public class ProgressTracking : MonoBehaviour
 {
+Enum Progress{StageOne, StageTwo, StageThree, StageFour}
+
+void Start()
+{
+Progress myProgress;
+myProgress = Progress.StageOne
+}
+
+
 
 }
+
