@@ -12,7 +12,7 @@ int post;
 void LoadPost(int postNum)
 {
   UiContainers uiContainer = postPanel[postNum].GetComponent<UiContainers>();
-  uiContainer.textUsernameField = feedPosts[postNum].
+  uiContainer.textUsernameField.text = feedPosts[postNum].username;
 
 }
 }
