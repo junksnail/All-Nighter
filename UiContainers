@@ -4,7 +4,7 @@ using TMPro;
 
 public class UiContainers : MonoBehaviour
 {
-  [SerializeField] GameObject textUsernameField;
-  [SerializeField] GameObject textCaptionField;
-  [SerializeField] GameObject imageImageField;
+  [SerializeField] TMP_Text textUsernameField;
+  [SerializeField] TMP_Text textCaptionField;
+  [SerializeField] TMP_Text imageImageField;
 }
