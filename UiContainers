@@ -4,7 +4,7 @@ using TMPro;
 
 public class UiContainers : MonoBehaviour
 {
-  [SerializeField] TMP_Text textUsernameField;
-  [SerializeField] TMP_Text textCaptionField;
-  [SerializeField] TMP_Text imageImageField;
+  public TMP_Text textUsernameField;
+  public TMP_Text textCaptionField;
+  public TMP_Text imageImageField;
 }
