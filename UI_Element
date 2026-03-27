@@ -1,0 +1,14 @@
+using UnityEngine;
+
+[CreateAssetMenu(fileName = "UI_Element", menuName = "ScriptableObjects/UiElementScriptableObject", order = 2)]
+public class UiElementScriptableObject : ScriptableObject
+{
+    public string username;
+    public Image[] image;
+    
+    [TextField] public string caption;
+    
+    public int likes;
+    public int shares;
+    public int numberOfSlides;
+}
