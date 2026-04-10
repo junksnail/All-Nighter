@@ -11,6 +11,7 @@ public class ProgressTracking : MonoBehaviour
     {
         Progress myProgress;
         myProgress = Progress.StageOne;
+        Debug.Log(myProgress);
     }
 
 
