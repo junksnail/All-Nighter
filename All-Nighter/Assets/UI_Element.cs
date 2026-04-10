@@ -10,7 +10,7 @@ public class Ui_Element : ScriptableObject
 
     [TextArea] public string caption;
 
-    public int likes;
-    public int shares;
+    public string likes;
+    public string shares;
 }
 

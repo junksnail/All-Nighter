@@ -15,6 +15,7 @@ public class PostFeed : MonoBehaviour
         uiContainer.textUsernameField.text = feedPosts[postNum].username;
         uiContainer.textCaptionField.text = feedPosts[postNum].caption;
         uiContainer.imageImageField.sprite = feedPosts[postNum].picture;
+        uiContainer.textLikesField.text = feedPosts[postNum].likes;
     }
 
     void Start()
