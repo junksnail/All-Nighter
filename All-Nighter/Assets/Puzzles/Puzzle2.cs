@@ -1,26 +1,29 @@
 using UnityEngine;
 
-public class Puzzle2 : MonoBehaviour
+public class Puzzle2 : Puzzle
 {
-    bool completed;
-    bool commented;
+    public bool commented;
 
     void CommentedDeleted()
     {
         commented = false;
     }
 
-    void Commented()
+    public void Commented()
     {
         commented = true;
     }
 
     void Update()
     {
-        if (commented && !completed)
+        if (CheckIfCurrent())
         {
-            completed = true;
-            AllowNextPage.instance.CompleteEntry();
+            if (commented && !completed)
+            {
+                completed = true;
+                AllowNextPage.instance.CompleteEntry(page);
+                gameObject.GetComponent<Puzzle2>().enabled = false;
+            }
         }
     }
 }

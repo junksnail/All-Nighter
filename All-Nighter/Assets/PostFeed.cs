@@ -20,6 +20,21 @@ public class PostFeed : MonoBehaviour
 
     void Start()
     {
-        LoadPost(0);
+        for (int i = 0; i < 5; i++)
+        {
+            LoadPost(i);
+        }
+    }
+
+    public void NextSet(int iteration)
+    {
+        for (int i = 0; i < postPanel.Length; i++)
+        {
+            UiContainers uiContainer = postPanel[i].GetComponent<UiContainers>();
+            uiContainer.Reset();
+            int iterateLoad = 5 * iteration;
+            LoadPost(iterateLoad + i);
+        }
+
     }
 }

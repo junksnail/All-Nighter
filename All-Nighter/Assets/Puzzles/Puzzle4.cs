@@ -1,26 +1,41 @@
 using UnityEngine;
 
-public class Puzzle4 : MonoBehaviour
+public class Puzzle4 : Puzzle
 {
-    bool completed;
-    bool subscribed;
+    public bool liked;
+    public bool commented;
 
-    void unSubscribed()
+    public void CommentDeleted()
     {
-        subscribed = false;
+        commented = false;
     }
 
-    void Subscribed()
+    public void Commented()
     {
-        subscribed = true;
+        commented = true;
     }
+    public void Like()
+    {
+        liked = true;
+    }
+
+    void Unlike()
+    {
+        liked = false;
+    }
+
 
     void Update()
     {
-        if (subscribed && !completed)
+        if (CheckIfCurrent())
         {
-            completed = true;
-            AllowNextPage.instance.CompleteEntry();
+            if (commented && liked && !completed)
+            {
+                completed = true;
+                AllowNextPage.instance.CompleteEntry(page);
+                gameObject.GetComponent<Puzzle4>().enabled = false;
+
+            }
         }
     }
 }

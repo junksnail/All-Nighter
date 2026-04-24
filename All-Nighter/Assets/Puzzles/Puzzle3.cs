@@ -1,49 +1,30 @@
 using UnityEngine;
 
-public class Puzzle3 : MonoBehaviour
+public class Puzzle3 : Puzzle
 {
-    bool completed;
-    bool liked;
-    bool commented;
-    bool subscribed;
+    public bool subscribed;
 
     void unSubscribed()
     {
         subscribed = false;
     }
 
-    void Subscribed()
+    public void Subscribed()
     {
         subscribed = true;
     }
 
-    void CommentedDeleted()
-    {
-        commented = false;
-    }
-
-    void Commented()
-    {
-        commented = true;
-    }
-    void Like()
-    {
-        liked = true;
-    }
-
-    void Unlike()
-    {
-        liked = false;
-    }
-
-
     void Update()
     {
-        if (commented && liked && subscribed && !completed)
+        if (CheckIfCurrent())
         {
-            completed = true;
-            AllowNextPage.instance.CompleteEntry();
-            
+            if (subscribed && !completed)
+            {
+                completed = true;
+                AllowNextPage.instance.CompleteEntry(page);
+                gameObject.GetComponent<Puzzle3>().enabled = false;
+            }
         }
     }
 }
+

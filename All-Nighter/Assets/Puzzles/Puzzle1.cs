@@ -1,26 +1,33 @@
 using UnityEngine;
 
-public class Puzzle1 : MonoBehaviour
+public class Puzzle1 : Puzzle
 {
-    bool completed;
     public bool liked;
 
-    void Like()
+
+    public void Like()
     {
+        Debug.Log("Post Liked");
         liked = true;  
     }
 
     void Unlike()
     {
+        Debug.Log("Post Unliked");
         liked = false;
     }
 
     void Update()
     {
-        if (liked && !completed)
+        if (CheckIfCurrent())
         {
-            completed = true;
-            AllowNextPage.instance.CompleteEntry();
+            if (liked && !completed)
+            {
+                Debug.Log("Puzzle Completed");
+                completed = true;
+                AllowNextPage.instance.CompleteEntry(page);
+                gameObject.GetComponent<Puzzle1>().enabled = false;
+            }
         }
     }
 }

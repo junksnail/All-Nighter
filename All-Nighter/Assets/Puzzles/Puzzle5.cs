@@ -1,22 +1,31 @@
 using UnityEngine;
 
-public class Puzzle5 : MonoBehaviour
+public class Puzzle5 : Puzzle
 {
-    bool completed;
-    bool liked;
-    bool commented;
-    bool subscribed;
+    public bool liked;
+    public bool commented;
+    public bool subscribed;
 
-    void CommentDeleted()
+    void unSubscribed()
+    {
+        subscribed = false;
+    }
+
+    public void Subscribed()
+    {
+        subscribed = true;
+    }
+
+    void CommentedDeleted()
     {
         commented = false;
     }
 
-    void Commented()
+    public void Commented()
     {
         commented = true;
     }
-    void Like()
+    public void Like()
     {
         liked = true;
     }
@@ -29,11 +38,14 @@ public class Puzzle5 : MonoBehaviour
 
     void Update()
     {
-        if (commented && liked && !completed)
+        if (CheckIfCurrent())
         {
-            completed = true;
-            AllowNextPage.instance.CompleteEntry();
-
+            if (commented && liked && subscribed && !completed)
+            {
+                completed = true;
+                AllowNextPage.instance.CompleteEntry(page);
+                gameObject.GetComponent<Puzzle5>().enabled = false;
+            }
         }
     }
 }
