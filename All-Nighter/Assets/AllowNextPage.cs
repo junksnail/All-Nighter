@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 
 public class AllowNextPage : MonoBehaviour
 {
@@ -16,6 +17,11 @@ public class AllowNextPage : MonoBehaviour
 
     public static AllowNextPage instance;
 
+    public GameObject UpButton;
+    public GameObject DownButton;
+
+    public TMP_Text num;
+
     void Awake()
     {
         instance = this;
@@ -26,6 +32,33 @@ public class AllowNextPage : MonoBehaviour
         MoveToNextPost();
         MoveToPreviousPost();
         CheckForNext();
+        UI();
+    }
+
+    void Start()
+    {
+        int fixPage = currentPage + 1;
+        num.text = fixPage.ToString();
+    }
+
+    void UI()
+    {
+        if (currentPost == 0)
+        {
+            UpButton.SetActive(false);
+        }
+        if (currentPost != 0)
+        {
+            UpButton.SetActive(true);
+        }
+        if (currentPost == 4)
+        {
+            DownButton.SetActive(false);
+        }
+        if (currentPost != 4)
+        {
+            DownButton.SetActive(true);
+        }
     }
 
     public void CompleteEntry(int page)
@@ -33,9 +66,27 @@ public class AllowNextPage : MonoBehaviour
         PageProgress[page]++;
     }
 
+    public void ButtonMoveNext()
+    {
+        if (currentPost < 4)
+        {
+            currentPost++;
+            content.transform.position = content.transform.position + new Vector3(0, 7.33141902f, 0);
+        }
+    }
+
+    public void ButtonMoveLast()
+    {
+        if (currentPost > 0)
+        {
+            currentPost--;
+            content.transform.position = content.transform.position - new Vector3(0, 7.33141902f, 0);
+        }
+    }
+
     public void MoveToNextPost()
     {
-        if (Input.GetKeyDown("DownArrow") && !pressed && currentPost < 4)
+        if (Input.GetKeyDown(KeyCode.DownArrow) && !pressed && currentPost < 4)
         {
             pressed = true;
             currentPost++;
@@ -43,7 +94,7 @@ public class AllowNextPage : MonoBehaviour
             content.transform.position = content.transform.position + new Vector3(0, 7.33141902f, 0);
 
         }
-        if (!Input.GetKeyDown("DownArrow"))
+        if (!Input.GetKeyDown(KeyCode.DownArrow))
         {
             pressed = false;
         }
@@ -51,16 +102,17 @@ public class AllowNextPage : MonoBehaviour
 
     public void MoveToPreviousPost()
     {
-        if (Input.GetKeyDown("UpArrow") && !pressed && currentPost > 0)
+        if (Input.GetKeyDown(KeyCode.UpArrow) && !pressed && currentPost > 0)
         {
             pressed = true;
             currentPost--;
             content.transform.position = content.transform.position - new Vector3(0, 7.33141902f, 0);
         }
-        if (!Input.GetKeyDown("UpArrow"))
+        if (!Input.GetKeyDown(KeyCode.UpArrow))
         {
             pressed = false;
         }
+        
     }
 
     void CheckForNext()
@@ -76,6 +128,10 @@ public class AllowNextPage : MonoBehaviour
         if (PagesCompleted[currentPage] == true)
         {
             currentPage++;
+            currentPost = 0;
+            PostFeed.instance.NextSet(currentPage);
+            int fixPage = currentPage + 1;
+            num.text = fixPage.ToString();
         }
     }
 

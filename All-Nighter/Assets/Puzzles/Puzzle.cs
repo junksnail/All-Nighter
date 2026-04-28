@@ -16,4 +16,9 @@ public class Puzzle : MonoBehaviour
             return false;
         }
     }
+
+    void Update()
+    {
+
+    }
 }

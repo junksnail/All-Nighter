@@ -12,5 +12,6 @@ public class Ui_Element : ScriptableObject
 
     public string likes;
     public string shares;
+    public string followers;
 }
 
