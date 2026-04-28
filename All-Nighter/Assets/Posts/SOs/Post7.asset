@@ -10,11 +10,22 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dfb63cf5688dfce42891ff36559a8d8a, type: 3}
-  m_Name: Post 6
+  m_Name: Post7
   m_EditorClassIdentifier: Assembly-CSharp::Ui_Element
-  username: a_cat
-  picture: {fileID: 6758838191038410327, guid: 5048076f9ef00a4498a5351100d0fcaa, type: 3}
-  caption: ddddddddddddddddddddddddddddddddddddddddddddddsssssssssssssssssssssssssssssssssssssssssssssssssswwwwwwwwwwwwwwwaaaaaaaaaaaaaaaa
-  likes: 2
-  shares: 
-  followers: 3
+  username: amazeballs
+  picture: {fileID: 0}
+  caption: '___________    __
+
+    ______    _______
+
+    _________    ____
+
+    ___   
+    __________
+
+    _____________
+
+    _______________'
+  likes: 123
+  shares: 345
+  followers: 42
