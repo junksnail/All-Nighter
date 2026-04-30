@@ -26,7 +26,6 @@ public class Puzzle1 : Puzzle
                 Debug.Log("Puzzle Completed");
                 completed = true;
                 AllowNextPage.instance.CompleteEntry(page);
-                gameObject.GetComponent<Puzzle1>().enabled = false;
             }
         }
     }

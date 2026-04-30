@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 using TMPro;
 
 public class AllowNextPage : MonoBehaviour
@@ -13,7 +14,8 @@ public class AllowNextPage : MonoBehaviour
 
     [SerializeField] GameObject content;
     public List<GameObject> posts;
-    public Transform[] slots;
+    public GameObject[] input;
+    public TMP_InputField[] ipf;
 
     public static AllowNextPage instance;
 
@@ -25,6 +27,15 @@ public class AllowNextPage : MonoBehaviour
     void Awake()
     {
         instance = this;
+        InputField();
+    }
+
+    void InputField()
+    {
+        for (int i = 0; i < input.Length; i++)
+        {
+            ipf[i] = input[i].GetComponent<TMP_InputField>();
+        }
     }
 
     void Update()
@@ -127,11 +138,18 @@ public class AllowNextPage : MonoBehaviour
     {
         if (PagesCompleted[currentPage] == true)
         {
+            
             currentPage++;
             currentPost = 0;
             PostFeed.instance.NextSet(currentPage);
             int fixPage = currentPage + 1;
             num.text = fixPage.ToString();
+            ipf[0].text = "";
+            ipf[1].text = "";
+            ipf[2].text = "";
+            ipf[3].text = "";
+            ipf[4].text = "";
+
         }
     }
 

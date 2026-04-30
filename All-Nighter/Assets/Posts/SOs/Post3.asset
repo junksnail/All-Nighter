@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfb63cf5688dfce42891ff36559a8d8a, type: 3}
   m_Name: Post3
   m_EditorClassIdentifier: Assembly-CSharp::Ui_Element
-  username: 2
-  picture: {fileID: 0}
-  caption: Subscribe for more
-  likes: ' 13123'
+  username: eggHead
+  picture: {fileID: 4615742883634408015, guid: 2d45bb6a81915b74c8fc277f9b05fb9c, type: 3}
+  caption: all hail the egg, become one of our subscribers to praise the egg
+  likes: 193,938
   shares: 4545
-  followers: 53
+  followers: 64,829

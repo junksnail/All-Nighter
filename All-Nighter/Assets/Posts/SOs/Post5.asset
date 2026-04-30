@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfb63cf5688dfce42891ff36559a8d8a, type: 3}
   m_Name: Post5
   m_EditorClassIdentifier: Assembly-CSharp::Ui_Element
-  username: hello
-  picture: {fileID: 0}
-  caption: Like comment and subscribe
-  likes: 69
-  shares: 69
-  followers: 69
+  username: coffee_daily2
+  picture: {fileID: 8185903544902012903, guid: f56488e7263d6e64d9b499f59990e15b, type: 3}
+  caption: this coffee was great! i really Liked how the latte art too! comment your
+    favourite cafe, and make sure to follow for more cafe recommendations!
+  likes: 12
+  shares: 1
+  followers: 103

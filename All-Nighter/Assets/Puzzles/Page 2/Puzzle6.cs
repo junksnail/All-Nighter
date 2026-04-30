@@ -51,8 +51,14 @@ public class Puzzle6 : Puzzle
         }
         if (yp && xp)
         {
-            completed = true;
+
             image.transform.position = targetPosition;
+            if (!completed)
+            {
+                completed = true;
+                AllowNextPage.instance.CompleteEntry(page);
+                gameObject.GetComponent<Puzzle2>().enabled = false;
+            }
         }
     }
 

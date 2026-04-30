@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfb63cf5688dfce42891ff36559a8d8a, type: 3}
   m_Name: Post4
   m_EditorClassIdentifier: Assembly-CSharp::Ui_Element
-  username: 23
-  picture: {fileID: 0}
-  caption: Like and comment to see more
+  username: totallylegit
+  picture: {fileID: 7585119186489810923, guid: ea9c54a089a8f104db3251e949865bda, type: 3}
+  caption: '#ad like and comment to enter this giveaway! terms and conditions apply.
+    contest ends 05/08/2002 '
   likes: 1
-  shares: 1
-  followers: 1
+  shares: 0
+  followers: 0

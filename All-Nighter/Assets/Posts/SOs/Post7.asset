@@ -12,20 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfb63cf5688dfce42891ff36559a8d8a, type: 3}
   m_Name: Post7
   m_EditorClassIdentifier: Assembly-CSharp::Ui_Element
-  username: amazeballs
-  picture: {fileID: 0}
-  caption: '___________    __
-
-    ______    _______
-
-    _________    ____
-
-    ___   
-    __________
-
-    _____________
-
-    _______________'
-  likes: 123
-  shares: 345
-  followers: 42
+  username: dark_knight846
+  picture: {fileID: -4765861005077091429, guid: df16ad70e699a2c479d029a78d16ab97, type: 3}
+  caption: 
+  likes: 23
+  shares: 
+  followers: 214

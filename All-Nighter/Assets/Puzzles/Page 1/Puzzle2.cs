@@ -22,7 +22,6 @@ public class Puzzle2 : Puzzle
             {
                 completed = true;
                 AllowNextPage.instance.CompleteEntry(page);
-                gameObject.GetComponent<Puzzle2>().enabled = false;
             }
         }
     }
